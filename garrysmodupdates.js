@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 });
 app.listen(process.env.PORT || 5000);
 
-var userstream = twitter.stream('statuses/filter', {follow: 'FacepunchBot', track: '(GarrysMod/main)'});
+var userstream = twitter.stream('statuses/filter', {follow: '94674638', track: '(GarrysMod/main)'});
 userstream.on('tweet', function(tweet) {
 	console.log('Received tweet: id ' + tweet.id_str + ', screen_name ' + tweet.user.screen_name);
 	if (tweet.user.screen_name === "FacepunchBot") {

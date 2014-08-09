@@ -1,6 +1,6 @@
 {
 	"name": "garrysmodupdates",
-	"version": "0.9.2",
+	"version": "0.9.3",
 	"description": "Echoes commits to the Facepunch's internal Garry's Mod repo",
 	"main": "garrysmodupdates.js",
 	"author": "Bo Anderson",
