@@ -13,10 +13,11 @@ app.get('/', function(req, res) {
 });
 app.listen(process.env.PORT || 5000);
 
-var userstream = twitter.stream('statuses/filter', {follow: '94674638', track: '(GarrysMod/main)'});
+var userstream = twitter.stream('statuses/filter', {follow: '94674638'});
 userstream.on('tweet', function(tweet) {
 	console.log('Received tweet: id ' + tweet.id_str + ', screen_name ' + tweet.user.screen_name);
-	if (tweet.user.screen_name === "FacepunchBot") {
+	if (tweet.user.screen_name === "FacepunchBot" && tweet.text.endsWith("(GarrysMod/main)")) {
+		console.log('Retweeting.');
 		retweet(tweet.id_str);
 	}
 });
@@ -24,3 +25,9 @@ userstream.on('tweet', function(tweet) {
 var retweet = function(idStr) {
 	twitter.post('statuses/retweet/:id', {id: idStr}, function() {});
 };
+
+if (typeof String.prototype.endsWith !== 'function') {
+	String.prototype.endsWith = function(suffix) {
+		return this.indexOf(suffix, this.length - suffix.length) !== -1;
+	};
+}
