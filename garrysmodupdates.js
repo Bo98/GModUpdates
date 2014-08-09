@@ -11,7 +11,7 @@ var app = express();
 app.get('/', function(req, res) {
 	res.send('Hello there.');
 });
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
 
 var userstream = twitter.stream('statuses/filter', {follow: 'FacepunchBot', track: '(GarrysMod/main)'});
 userstream.on('tweet', function(tweet) {
