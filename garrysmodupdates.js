@@ -9,14 +9,15 @@ var twitter = new Twit({
 var express = require('express');
 var app = express();
 app.get('/', function(req, res) {
-	res.send('Hello there.');
+	res.send('Hello there. // <a href="https://www.twitter.com/GModUpdates">@GModUpdates</a>');
 });
 app.listen(process.env.PORT || 5000);
 
-var userstream = twitter.stream('statuses/filter', {follow: '94674638'});
-userstream.on('tweet', function(tweet) {
+var stream = twitter.stream('statuses/filter', {follow: '94674638'});
+stream.on('tweet', function(tweet) {
 	console.log('Received tweet: id ' + tweet.id_str + ', screen_name ' + tweet.user.screen_name);
-	if (tweet.user.screen_name === "FacepunchBot" && tweet.text.endsWith("(GarrysMod/main)")) {
+	console.log('Text: "' + tweet.text + '"');
+	if (tweet.user.screen_name === "FacepunchBot" && tweet.text.endsWith("(Garrys Mod/main)")) {
 		console.log('Retweeting.');
 		retweet(tweet.id_str);
 	}
