@@ -1,6 +1,6 @@
 {
 	"name": "garrysmodupdates",
-	"version": "0.9.4",
+	"version": "0.9.5",
 	"description": "Echoes commits to the Facepunch's internal Garry's Mod repo",
 	"main": "garrysmodupdates.js",
 	"author": "Bo Anderson",
@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"scripts": {"start": "node garrysmodupdates.js"},
 	"dependencies": {
-		"twit": "~1.1.11",
-		"express": "~3.4.6"
+		"twit": "~1.1.19",
+		"express": "~4.11.1"
 	}
 }

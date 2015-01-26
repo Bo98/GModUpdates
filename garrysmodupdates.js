@@ -9,7 +9,7 @@ var twitter = new Twit({
 var express = require('express');
 var app = express();
 app.get('/', function(req, res) {
-	res.send('Hello there. // <a href="https://www.twitter.com/GModUpdates">@GModUpdates</a>');
+	res.send('Hello there! // <a href="https://www.twitter.com/GModUpdates">@GModUpdates</a>');
 });
 app.listen(process.env.PORT || 5000);
 
