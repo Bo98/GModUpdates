@@ -26,9 +26,3 @@ stream.on('tweet', function(tweet) {
 var retweet = function(idStr) {
 	twitter.post('statuses/retweet/:id', {id: idStr}, function() {});
 };
-
-if (typeof String.prototype.endsWith !== 'function') {
-	String.prototype.endsWith = function(suffix) {
-		return this.indexOf(suffix, this.length - suffix.length) !== -1;
-	};
-}
