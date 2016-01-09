@@ -6,7 +6,7 @@
 	"author": "Bo Anderson",
 	"keywords": ["GMod", "Garry's", "Mod", "Updates"],
 	"license": "MIT",
-	"scripts": {"start": "node --harmony_strings garrysmodupdates.js"},
+	"scripts": {"start": "node garrysmodupdates.js"},
 	"dependencies": {
 		"twit": "~2.1.0",
 		"express": "~4.13.3"
