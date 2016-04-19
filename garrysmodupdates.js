@@ -17,7 +17,7 @@ var stream = twitter.stream('statuses/filter', {follow: '94674638'});
 stream.on('tweet', function(tweet) {
 	console.log('Received tweet: id ' + tweet.id_str + ', screen_name ' + tweet.user.screen_name);
 	console.log('Text: "' + tweet.text + '"');
-	if (tweet.user.screen_name === "FacepunchBot" && tweet.text.search(" on Garrys Mod/") != 1) {
+	if (tweet.user.screen_name === "FacepunchBot" && tweet.text.includes(" on Garrys Mod/")) {
 		console.log('Retweeting.');
 		retweet(tweet.id_str);
 	}
